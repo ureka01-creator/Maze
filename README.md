@@ -1,17 +1,16 @@
-# 구슬 미로 v0.2.0
+# 구슬 미로 v0.2.1
 
-기울기로 조작하는 모바일 HTML Canvas 게임. HTTPS에서 index.html 실행 후 시작하기로 센서와 오디오를 활성화합니다.
+휴대폰 기울기로 조작. 시작하기에서 권한을 허용합니다.
 
-- 500×1500 월드, 구슬을 따라가는 세로 카메라
-- 구멍 함정 12개, 낙하 후 출발점 복귀 (시간과 실패 횟수 유지)
-- 중심 맞추기, 처음부터, 백그라운드 일시정지
-- 실제 구슬 녹음 기반 속도별 구르기와 충돌음
+- 500×800 맵, 함정 4개, 낙하 후 출발점 복귀
+- 화면 가장자리에서만 카메라 이동
+- 재시작·낙하 시 기울기 기준 유지. 중심 맞추기로만 수동 보정 (화면 회전·백그라운드 복귀는 재보정)
+- 작은 기울기 반응 개선, 최고 속도 제한
+- 실제 구슬 녹음을 낮은 음량으로 재생
 
-## 소리 출처
-모두 CC0. 공개 MP3 프리뷰를 받아 모노 변환, 구간 편집, 페이드 및 음량 조정 후 audio-recordings.js에 포함했습니다. 런타임 외부 다운로드 없음.
-- Solar01, Glass Marbles Rolling on Wood.wav: https://freesound.org/people/Solar01/sounds/661650/ (1.05초부터 3.15초 구간)
-- Ryanz-Official, Marble Impact: https://freesound.org/people/Ryanz-Official/sounds/639754/ (0.065초부터 0.19초 구간)
-- 라이선스: https://creativecommons.org/publicdomain/zero/1.0/
+## 오디오
+Solar01, Glass Marbles Rolling on Wood.wav (CC0): https://freesound.org/people/Solar01/sounds/661650/
+공개 MP3 프리뷰에서 구르는 구간과 짧은 접촉 구간을 편집했습니다. 모노 변환·페이드·음량 조정. audio-recordings.js에 포함하므로 외부 서비스에 런타임 의존하지 않습니다.
 
 ## 검증
-JavaScript 문법, 벽 관통 방지, 전체 맵 완주, 함정 회피 경로, 낙하와 복귀, 초기화 시뮬레이션 통과. 실제 모바일 청취와 센서 실기기 검증은 미수행.
+3도 센서 입력 반응, 기울기 기준 유지, 벽 충돌, 완주, 함정·복귀, 렌더 함수 호출 통과. 실제 아이폰 센서와 청취 평가는 미수행.
