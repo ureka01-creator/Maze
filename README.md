@@ -1,4 +1,4 @@
-# 구슬 미로 v0.2.1
+# 구슬 미로 v0.2.2
 
 휴대폰 기울기로 조작. 시작하기에서 권한을 허용합니다.
 
@@ -14,3 +14,8 @@ Solar01, Glass Marbles Rolling on Wood.wav (CC0): https://freesound.org/people/S
 
 ## 검증
 3도 센서 입력 반응, 기울기 기준 유지, 벽 충돌, 완주, 함정·복귀, 렌더 함수 호출 통과. 실제 아이폰 센서와 청취 평가는 미수행.
+
+## v0.2.2 correction
+Angle subtraction was replaced by W3C Z-X-Y gravity projection onto the calibrated neutral plane. Fixed-step smoothing, stronger neutral braking, low-speed wall sticking and stale sensor suppression were added. Audio follows actual displacement rather than unconstrained velocity. Recorded audio crops were decoded and measured: the previous hit was silent and the roll had trailing silence. Replacement PCM crops have nonzero energy, the roll seam is crossfaded and impact onset is aligned. Source remains Solar01 CC0 as above.
+
+Validation: portrait/landscape axes, 0/30/60-degree neutral poses, ±180-degree wrapping, small tilt response, neutral braking, stationary wall contact, complete route, trap respawn, render calls, stale sensor stop; real iPhone sensor and speaker validation remains pending.
